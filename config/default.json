@@ -1,5 +1,7 @@
 {
   "mongoURI": "mongodb+srv://dbadmindev:dbadmindev@social-sandbox-h5hqy.mongodb.net/test?retryWrites=true&w=majority",
   "secretOrKey": "7E85C676FD97D370E2309003A5681BC4388306979B7DB04C37C6FB0672891B6A",
-  "jwtExpiry": "360000"
+  "jwtExpiry": "3600000",
+  "githubClientId": "faa84cc907c1ca3bb8b8",
+  "githubClientSecret": "ce7287b2f75611de39338d3f178ce182744dd7bb"
 }
