@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://dbadmindev:dbadmindev@social-sandbox-h5hqy.mongodb.net/test?retryWrites=true&w=majority"
+}
