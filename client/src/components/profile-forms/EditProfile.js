@@ -45,7 +45,7 @@ const EditProfile = ({
       youtube: loading || !profile.social ? "" : profile.social.youtube,
       instagram: loading || !profile.social ? "" : profile.social.instagram,
     });
-  });
+  }, [loading]);
 
   const {
     company,
@@ -235,16 +235,20 @@ const EditProfile = ({
         )}
 
         <input type="submit" className="btn btn-primary my-1" />
-        <a className="btn btn-light my-1" href="dashboard.html">
+        <Link
+          to="/dashboard"
+          className="btn btn-light my-1"
+          href="dashboard.html"
+        >
           Go Back
-        </a>
+        </Link>
       </form>
     </Fragment>
   );
 };
 
 EditProfile.propTypes = {
-  editProfile: PropTypes.func.isRequired,
+  createProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
 };
@@ -253,6 +257,7 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
-  withRouter(EditProfile)
-);
+export default connect(mapStateToProps, {
+  createProfile,
+  getCurrentProfile,
+})(withRouter(EditProfile));
