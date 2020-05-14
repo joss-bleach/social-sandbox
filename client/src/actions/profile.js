@@ -9,7 +9,7 @@ export const getCurrentProfile = () => async (dispatch) => {
 
     dispatch({
       type: GET_PROFILE,
-      payload: res.date,
+      payload: res.data,
     });
   } catch (err) {
     dispatch({
