@@ -25,11 +25,11 @@ const PostItem = ({
     <div>
       <p class="my-1">{text}</p>
       <p class="post-date">
-        Posted on <Moment format="DD/MM/YY">{date}</Moment>
+        Posted on <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
       <button onClick={(e) => addLike(_id)} type="button" class="btn btn-light">
-        <i class="fas fa-thumbs-up"></i>
-        {likes.length > 0 && <span> {" " + likes.length}</span>}
+        <i class="fas fa-thumbs-up"></i>{" "}
+        {likes.length > 0 && <span>{likes.length}</span>}
       </button>
       <button
         onClick={(e) => removeLike(_id)}
@@ -44,15 +44,15 @@ const PostItem = ({
           <span class="comment-count">{comments.length}</span>
         )}
       </Link>
-      {!auth.loading ||
-        (user === auth.user._id && (
-          <button type="button" class="btn btn-danger">
-            <i class="fas fa-times"></i>
-          </button>
-        ))}
+      {!auth.loading && user === auth.user._id && (
+        <button type="button" class="btn btn-danger">
+          <i class="fas fa-times"></i>
+        </button>
+      )}
     </div>
   </div>
 );
+
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
